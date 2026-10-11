@@ -1,0 +1,41 @@
+---
+layout: default
+title: "Home"
+description: "Explore practical articles on AI search, SEO, technology and product development."
+---
+<section class="hero">
+  <p class="eyebrow">NOTES, IDEAS &amp; EXPLAINERS</p>
+  <h1>Understand the web.<br><span>Think beyond the obvious.</span></h1>
+  <p class="hero-description">Thoughtful guides on search, artificial intelligence, technology and building better digital products.</p>
+  <a class="text-link" href="#latest">Explore the latest articles ↓</a>
+</section>
+<section id="latest" class="latest-section">
+  <div class="section-heading">
+    <div><p class="eyebrow">THE JOURNAL</p><h2>Latest articles</h2></div>
+    <span class="article-count">{{ site.posts | size }} articles</span>
+  </div>
+  <div class="article-grid">
+    {% for post in site.posts %}
+      <article class="article-card">
+        <a class="card-link" href="{{ post.url | relative_url }}">
+          {% if post.image %}
+            <img class="card-image" src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post.title | escape }}" loading="lazy">
+          {% else %}
+            <div class="card-art" aria-hidden="true"><span>{{ post.categories.first | default: "IDEAS" }}</span><span class="art-symbol">✳</span></div>
+          {% endif %}
+          <div class="card-content">
+            <div class="post-meta">
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+              {% for category in post.categories limit:1 %}<span class="category">{{ category }}</span>{% endfor %}
+            </div>
+            <h3>{{ post.title | escape }}</h3>
+            <p>{{ post.description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 145 | escape }}</p>
+            <span class="read-link">Read article ↗</span>
+          </div>
+        </a>
+      </article>
+    {% else %}
+      <p>Your first article will appear here after you publish it.</p>
+    {% endfor %}
+  </div>
+</section>

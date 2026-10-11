@@ -1,0 +1,21 @@
+title: "Amit Kumar | Technology, AI and SEO"
+description: "Practical insights on SEO, AI search, technology, product development and digital publishing."
+url: "https://amitkrsocial.github.io"
+baseurl: ""
+lang: "en-IN"
+timezone: "Asia/Kolkata"
+author:
+  name: "Amit Kumar"
+  url: "https://amitkrsocial.github.io/about/"
+markdown: kramdown
+permalink: /blog/:title/
+show_excerpts: true
+excerpt_separator: "<!--more-->"
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+feed:
+  path: feed.xml
+exclude:
+  - README.md
