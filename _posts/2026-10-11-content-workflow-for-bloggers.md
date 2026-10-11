@@ -2,7 +2,7 @@
 layout: post
 title: "How to Build a Content Workflow That Turns Research Into Useful Articles"
 description: "Learn how to research, outline, write, edit, and publish useful blog articles with a repeatable content workflow that supports SEO and reader trust."
-date: 2026-10-13 09:00:00 +0530
+date: 2026-10-11 09:00:00 +0530
 categories:
   - Content Marketing
   - Blogging
