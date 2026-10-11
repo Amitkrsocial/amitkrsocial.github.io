@@ -15,6 +15,30 @@ layout: default
   <div class="article-body">{{ content }}</div>
   <footer class="article-footer">
     <p>Written by {{ page.author | default: site.author.name }}.</p>
+    
+<div class="social-share">
+  <h3>Enjoyed this article? Share it.</h3>
+
+  <div class="share-links">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}"
+       target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}"
+       target="_blank" rel="noopener noreferrer">Facebook</a>
+
+    <a href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url | url_encode }}&text={{ page.title | url_encode }}"
+       target="_blank" rel="noopener noreferrer">X / Twitter</a>
+
+    <a href="https://api.whatsapp.com/send?text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}"
+       target="_blank" rel="noopener noreferrer">WhatsApp</a>
+
+    <button type="button"
+      onclick="navigator.clipboard.writeText('{{ page.url | absolute_url }}').then(() => this.textContent = 'Link copied!')">
+      Copy Link
+    </button>
+  </div>
+</div>
+
     <a href="{{ '/' | relative_url }}">Explore more articles →</a>
   </footer>
 </article>
