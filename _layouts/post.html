@@ -15,45 +15,45 @@ layout: default
   <div class="article-body">{{ content }}</div>
   <footer class="article-footer">
     <p>Written by {{ page.author | default: site.author.name }}.</p>
-    
-
-<div class="social-share">
+    <div class="social-share">
   <h3>Enjoyed this article? Share it.</h3>
 
   <div class="share-links">
-    <a class="share-linkedin" href="YOUR_LINKEDIN_SHARE_URL"
+    <a class="share-linkedin"
+       href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}"
        target="_blank" rel="noopener noreferrer">
       <span class="share-icon" aria-hidden="true">in</span>
       LinkedIn
     </a>
 
-    <a class="share-facebook" href="YOUR_FACEBOOK_SHARE_URL"
+    <a class="share-facebook"
+       href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}"
        target="_blank" rel="noopener noreferrer">
       <span class="share-icon" aria-hidden="true">f</span>
       Facebook
     </a>
 
-    <a class="share-x" href="YOUR_X_SHARE_URL"
+    <a class="share-x"
+       href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url | url_encode }}&text={{ page.title | url_encode }}"
        target="_blank" rel="noopener noreferrer">
       <span class="share-icon" aria-hidden="true">𝕏</span>
       X / Twitter
     </a>
 
-    <a class="share-whatsapp" href="YOUR_WHATSAPP_SHARE_URL"
+    <a class="share-whatsapp"
+       href="https://api.whatsapp.com/send?text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}"
        target="_blank" rel="noopener noreferrer">
       <span class="share-icon" aria-hidden="true">◉</span>
       WhatsApp
     </a>
 
     <button class="share-copy" type="button"
-      onclick="navigator.clipboard.writeText(window.location.href).then(() => { this.innerHTML = '<span class=&quot;share-icon&quot; aria-hidden=&quot;true&quot;>✓</span> Link copied!'; }).catch(() => alert('Please copy the page URL from your browser address bar.'))">
+      onclick="navigator.clipboard.writeText(window.location.href).then(() => { this.innerHTML = '<span class=&quot;share-icon&quot; aria-hidden=&quot;true&quot;>✓</span> Link copied!'; }).catch(() => alert('Copy failed. Please copy the URL from your address bar.'))">
       <span class="share-icon" aria-hidden="true">🔗</span>
       Copy Link
     </button>
   </div>
 </div>
-
-
     <a href="{{ '/' | relative_url }}">Explore more articles →</a>
   </footer>
 </article>
