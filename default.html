@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  {% include head.html %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <span class="brand-mark">A</span>
+        <span>Amit Kumar<span class="brand-subtitle">Ideas worth exploring</span></span>
+      </a>
+      <nav class="navigation" aria-label="Main navigation">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/about/' | relative_url }}">About</a>
+        <a href="{{ '/feed.xml' | relative_url }}">RSS ↗</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container main-content">{{ content }}</main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© {{ site.time | date: "%Y" }} {{ site.author.name }}.</p>
+      <p>Thoughtful writing on technology and the web.</p>
+    </div>
+  </footer>
+</body>
+</html>
